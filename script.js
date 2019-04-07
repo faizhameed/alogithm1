@@ -1,14 +1,15 @@
-function confirmEnding(str, target) {
+function confirmEnding() {
     // "Never give up and good luck will find you."
     // -- Falcor
-    
-    let strArr = str.toString().split('');
+    let str = document.getElementById("string").value;
+  let target = document.getElementById("target").value;
+    let strArr = str.split('');
     let l =strArr.length-1;
-   let targetArr = target.toString().split('');
+   let targetArr = target.split('');
    console.log(strArr + targetArr);
   let lt = target.length-1;
   let i = lt;
-  let flag = 0;
+  let flag = 1;
   while(i>=0){
    if(strArr[l]==targetArr[i])
     flag=1;
@@ -17,13 +18,12 @@ function confirmEnding(str, target) {
     i--;
     l--;
   }
-  return (flag==0)?false:true;
+  let ans= (flag==0)?false:true;
+  document.getElementById('jstext').value = ans;
+ 
   
   }
 
-  let str = document.getElementById("string");
-  let target = document.getElementById("target");
 
-confirmEnding(string, target);
 
 
